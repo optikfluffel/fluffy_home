@@ -17,7 +17,7 @@ defmodule FluffyHome.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {FluffyHome, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger]]
+     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :instream]]
   end
 
   # Specifies which paths to compile per environment
@@ -31,6 +31,10 @@ defmodule FluffyHome.Mixfile do
     [{:phoenix, "~> 1.0.0"},
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:statistics, "~> 0.3.1"},
+     {:instream, "~> 0.4"},
+     {:timex, "~> 0.19.3"},
+     {:"erlang-serial", github: "knewter/erlang-serial"}]
   end
 end
