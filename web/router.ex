@@ -20,7 +20,9 @@ defmodule FluffyHome.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", FluffyHome do
-  #   pipe_through :api
-  # end
+  scope "/api", FluffyHome do
+    pipe_through :api
+
+    get "/living-room/:measurement", LivingRoomController, :last_hour
+  end
 end

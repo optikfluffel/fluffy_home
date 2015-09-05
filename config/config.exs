@@ -19,6 +19,12 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :fluffy_home, FluffyHome.InfluxDb,
+  hosts:  ["localhost"],
+  pool:   [max_overflow: 0, size: 4],
+  port:   8086,
+  scheme: "http"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
