@@ -2,7 +2,7 @@ defmodule FluffyHome.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", FluffyHome.RoomChannel
+  channel "rooms:*", FluffyHome.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

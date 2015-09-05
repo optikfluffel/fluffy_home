@@ -11,6 +11,8 @@ defmodule FluffyHome do
       supervisor(FluffyHome.Endpoint, []),
       # Here you could define other workers and supervisors as children
       # worker(FluffyHome.Worker, [arg1, arg2, arg3]),
+      worker(FluffyHome.LivingRoomSensor, []),
+      FluffyHome.InfluxDb.child_spec
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

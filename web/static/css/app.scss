@@ -1,0 +1,149 @@
+//---------- colors
+$blue: #6188e2;
+$blue-dark: #0544d3;
+$red: #f05b4f;
+$red-dark: #d70206;
+$green: #b2c326;
+$green-dark: #59922b;
+$yellow: #eacf7d;
+$yellow-dark: #f4c63d;
+$orange: #dda458;
+$orange-dark: #d17905;
+$purple: #a748ca;
+$purple-dark: #6b0392;
+
+$bright: #fcfcfc;
+$brightish: #86797d;
+$dark: #453d3f;
+
+
+//---------- fonts
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $dark;
+}
+
+
+//---------- icons
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+live-dashboard {
+  > section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+loading-placeholder {
+  > p {
+    color: $brightish;
+    font-size: 4rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+live-value {
+  color: $bright;
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+
+  // text-align: center;
+  display: flex;
+  justify-content: space-between;
+
+  flex-basis: auto;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.air_quality {
+    background-color: $green;
+  }
+  &.humidity {
+    background-color: $blue;
+  }
+  &.temperature {
+    background-color: $red;
+  }
+
+  > span {
+    width: 70%;
+    text-align: center;
+    &.icon {
+      width: 30%;
+    }
+  }
+}
+
+line-chart {
+  &.air_quality {
+    .ct-series-a .ct-line,
+    .ct-series-a .ct-point {
+      stroke: $green;
+    }
+    .ct-series-a .ct-area {
+      fill: $green;
+    }
+  }
+  &.humidity {
+    .ct-series-a .ct-line,
+    .ct-series-a .ct-point {
+      stroke: $blue;
+    }
+    .ct-series-a .ct-area {
+      fill: $blue;
+    }
+  }
+  &.temperature {
+    .ct-series-a .ct-line,
+    .ct-series-a .ct-point {
+      stroke: $red;
+    }
+    .ct-series-a .ct-area {
+      fill: $red;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  live-dashboard {
+    > section {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+
+  live-value {
+    margin-right: 1rem;
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  live-value {
+    font-size: 6rem;
+  }
+
+  loading-placeholder {
+    > p {
+      font-size: 6rem;
+    }
+  }
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: $brightish;
+}
